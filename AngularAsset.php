@@ -7,6 +7,8 @@
 
 namespace yii\angularjs;
 
+use yii\web\AssetBundle;
+
 /**
  * This asset bundle provides the [angular javascript library](https://angularjs.org/)
  *
