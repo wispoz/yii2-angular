@@ -1,12 +1,5 @@
-  var thumbsUp = element(by.css('span.glyphicon-thumbs-up'));
-  var thumbsDown = element(by.css('span.glyphicon-thumbs-down'));
-
-  it('should check ng-show / ng-hide', function() {
-    expect(thumbsUp.isDisplayed()).toBeFalsy();
-    expect(thumbsDown.isDisplayed()).toBeTruthy();
-
-    element(by.model('checked')).click();
-
-    expect(thumbsUp.isDisplayed()).toBeTruthy();
-    expect(thumbsDown.isDisplayed()).toBeFalsy();
+  it('should check both checkBoxes', function() {
+    expect(element(by.id('checkSlave')).getAttribute('checked')).toBeFalsy();
+    element(by.model('master')).click();
+    expect(element(by.id('checkSlave')).getAttribute('checked')).toBeTruthy();
   });

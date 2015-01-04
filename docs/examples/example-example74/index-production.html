@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>Example - example-example74-production</title>
-  <link href="style.css" rel="stylesheet" type="text/css">
+  <link href="animations.css" rel="stylesheet" type="text/css">
   
 
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-animate.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular-animate.js"></script>
   
 
   
 </head>
 <body ng-app="ngAnimate">
-   <p>
-   <input type="button" value="set" ng-click="myCssVar='css-class'">
-   <input type="button" value="clear" ng-click="myCssVar=''">
-   <br>
-   <span ng-class="myCssVar">CSS-Animated Text</span>
- </p>
+    Click me: <input type="checkbox" ng-model="checked" ng-init="checked=true" /><br/>
+  Show when checked:
+  <span ng-if="checked" class="animate-if">
+    I'm removed when the checkbox is unchecked.
+  </span>
 </body>
 </html>

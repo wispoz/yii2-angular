@@ -3,20 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Example - example-example46-jquery</title>
-  <link href="style.css" rel="stylesheet" type="text/css">
   
 
-  <script src="../../components/jquery-1.10.2/jquery.js"></script>
+  <script src="../../components/jquery-2.1.1/jquery.js"></script>
   <script src="../../../angular.js"></script>
   
 
   
 </head>
 <body ng-app="">
-     <input type="button" value="set" ng-click="myStyle={color:'red'}">
-   <input type="button" value="clear" ng-click="myStyle={}">
-   <br/>
-   <span ng-style="myStyle">Sample Text</span>
-   <pre>myStyle={{myStyle}}</pre>
+    Check me to make text readonly: <input type="checkbox" ng-model="checked"><br/>
+  <input type="text" ng-readonly="checked" value="I'm Angular"/>
 </body>
 </html>

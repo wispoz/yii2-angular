@@ -5,17 +5,24 @@
   <title>Example - example-example76-production</title>
   
 
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
-  <script src="app.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
   
 
   
 </head>
-<body ng-app="spicyApp1">
-    <div ng-controller="SpicyController">
-   <button ng-click="chiliSpicy()">Chili</button>
-   <button ng-click="jalapenoSpicy()">Jalapeño</button>
-   <p>The food is {{spice}} spicy!</p>
+<body ng-app="initExample">
+  <script>
+  angular.module('initExample', [])
+    .controller('ExampleController', ['$scope', function($scope) {
+      $scope.list = [['a', 'b'], ['c', 'd']];
+    }]);
+</script>
+<div ng-controller="ExampleController">
+  <div ng-repeat="innerList in list" ng-init="outerIndex = $index">
+    <div ng-repeat="value in innerList" ng-init="innerIndex = $index">
+       <span class="example-init">list[ {{outerIndex}} ][ {{innerIndex}} ] = {{value}};</span>
+    </div>
   </div>
+</div>
 </body>
 </html>

@@ -1,9 +1,14 @@
-describe("module:ng.filter:json", function() {
+describe("", function() {
+  var rootEl;
   beforeEach(function() {
-    browser.get("./examples/example-example56/index-jquery.html");
+    rootEl = browser.rootEl;
+    browser.get("examples/example-example56/index-jquery.html");
   });
-
-  it('should jsonify filtered objects', function() {
-    expect(element(by.binding("{'name':'value'}")).getText()).toMatch(/\{\n  "name": ?"value"\n}/);
+  
+  it('should check ng-class-odd and ng-class-even', function() {
+    expect(element(by.repeater('name in names').row(0).column('name')).getAttribute('class')).
+      toMatch(/odd/);
+    expect(element(by.repeater('name in names').row(1).column('name')).getAttribute('class')).
+      toMatch(/even/);
   });
 });

@@ -5,23 +5,19 @@
   <title>Example - example-example91-production</title>
   
 
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
-  <script src="script.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
   
 
   
 </head>
-<body ng-app="docsTabsExample">
-    <my-tabs>
-    <my-pane title="Hello">
-      <h4>Hello</h4>
-      <p>Lorem ipsum dolor sit amet</p>
-    </my-pane>
-    <my-pane title="World">
-      <h4>World</h4>
-      <em>Mauris elementum elementum enim at suscipit.</em>
-      <p><a href ng-click="i = i + 1">counter: {{i || 0}}</a></p>
-    </my-pane>
-  </my-tabs>
+<body ng-app="">
+    <span ng-non-bindable>{{1288323623006 | date:'medium'}}</span>:
+      <span>{{1288323623006 | date:'medium'}}</span><br>
+  <span ng-non-bindable>{{1288323623006 | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>:
+     <span>{{1288323623006 | date:'yyyy-MM-dd HH:mm:ss Z'}}</span><br>
+  <span ng-non-bindable>{{1288323623006 | date:'MM/dd/yyyy @ h:mma'}}</span>:
+     <span>{{'1288323623006' | date:'MM/dd/yyyy @ h:mma'}}</span><br>
+  <span ng-non-bindable>{{1288323623006 | date:"MM/dd/yyyy 'at' h:mma"}}</span>:
+     <span>{{'1288323623006' | date:"MM/dd/yyyy 'at' h:mma"}}</span><br>
 </body>
 </html>

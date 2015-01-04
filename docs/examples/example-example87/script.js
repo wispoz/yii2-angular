@@ -1,11 +1,5 @@
-  angular.module('docsTransclusionDirective', [])
-    .controller('Controller', ['$scope', function($scope) {
-      $scope.name = 'Tobias';
-    }])
-    .directive('myDialog', function() {
-      return {
-        restrict: 'E',
-        transclude: true,
-        templateUrl: 'my-dialog.html'
-      };
-    });
+  angular.module('documentExample', [])
+    .controller('ExampleController', ['$scope', '$document', function($scope, $document) {
+      $scope.title = $document[0].title;
+      $scope.windowTitle = angular.element(window.document)[0].title;
+    }]);

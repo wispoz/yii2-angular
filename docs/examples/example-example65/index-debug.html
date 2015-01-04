@@ -11,13 +11,9 @@
   
 </head>
 <body ng-app="">
-    <script>
-    function ExampleController($cookies) {
-      // Retrieving a cookie
-      var favoriteCookie = $cookies.myFavorite;
-      // Setting a cookie
-      $cookies.myFavorite = 'oatmeal';
-    }
-  </script>
+   <button ng-mouseleave="count = count + 1" ng-init="count=0">
+   Increment (when mouse leaves)
+ </button>
+ count: {{count}}
 </body>
 </html>

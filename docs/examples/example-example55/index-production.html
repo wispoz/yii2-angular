@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Example - example-example55-production</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
   
 
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular-animate.js"></script>
   
 
   
 </head>
-<body ng-app="">
-    <span ng-non-bindable>{{1288323623006 | date:'medium'}}</span>:
-      <span>{{1288323623006 | date:'medium'}}</span><br>
-  <span ng-non-bindable>{{1288323623006 | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>:
-     <span>{{1288323623006 | date:'yyyy-MM-dd HH:mm:ss Z'}}</span><br>
-  <span ng-non-bindable>{{1288323623006 | date:'MM/dd/yyyy @ h:mma'}}</span>:
-     <span>{{'1288323623006' | date:'MM/dd/yyyy @ h:mma'}}</span><br>
+<body ng-app="ngAnimate">
+   <input id="setbtn" type="button" value="set" ng-click="myVar='my-class'">
+ <input id="clearbtn" type="button" value="clear" ng-click="myVar=''">
+ <br>
+ <span class="base-class" ng-class="myVar">Sample Text</span>
 </body>
 </html>

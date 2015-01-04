@@ -1,21 +1,15 @@
-  angular.module('eventExampleApp', []).
-    controller('EventController', ['$scope', function($scope) {
-      /*
-       * expose the event object to the scope
-       */
-      $scope.clickMe = function(clickEvent) {
-        $scope.clickEvent = simpleKeys(clickEvent);
-        console.log(clickEvent);
+  angular.module('orderByExample', [])
+    .controller('ExampleController', ['$scope', '$filter', function($scope, $filter) {
+      var orderBy = $filter('orderBy');
+      $scope.friends = [
+        { name: 'John',    phone: '555-1212',    age: 10 },
+        { name: 'Mary',    phone: '555-9876',    age: 19 },
+        { name: 'Mike',    phone: '555-4321',    age: 21 },
+        { name: 'Adam',    phone: '555-5678',    age: 35 },
+        { name: 'Julie',   phone: '555-8765',    age: 29 }
+      ];
+      $scope.order = function(predicate, reverse) {
+        $scope.friends = orderBy($scope.friends, predicate, reverse);
       };
-
-      /*
-       * return a copy of an object with only non-object keys
-       * we need this to avoid circular references
-       */
-      function simpleKeys (original) {
-        return Object.keys(original).reduce(function (obj, key) {
-          obj[key] = typeof original[key] === 'object' ? '{ ... }' : original[key];
-          return obj;
-        }, {});
-      }
+      $scope.order('-age',false);
     }]);

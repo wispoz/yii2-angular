@@ -3,25 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>Example - example-example106-production</title>
-  <link href="style.css" rel="stylesheet" type="text/css">
   
 
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular-touch.js"></script>
   <script src="script.js"></script>
   
 
   
 </head>
-<body ng-app="">
-  <div class="show-scope-demo">
-  <div ng-controller="GreetCtrl">
-    Hello {{name}}!
+<body ng-app="ngSwipeRightExample">
+    <div ng-show="!showActions" ng-swipe-left="showActions = true">
+    Some list content, like an email in the inbox
   </div>
-  <div ng-controller="ListCtrl">
-    <ol>
-      <li ng-repeat="name in names">{{name}} from {{department}}</li>
-    </ol>
+  <div ng-show="showActions" ng-swipe-right="showActions = false">
+    <button ng-click="reply()">Reply</button>
+    <button ng-click="delete()">Delete</button>
   </div>
-</div>
 </body>
 </html>

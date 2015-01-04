@@ -3,26 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>Example - example-example40-jquery</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
   
 
-  <script src="../../components/jquery-1.10.2/jquery.js"></script>
+  <script src="../../components/jquery-2.1.1/jquery.js"></script>
   <script src="../../../angular.js"></script>
+  <script src="script.js"></script>
   
 
   
 </head>
 <body ng-app="">
-  <script>
-  function Ctrl($scope) {
-    $scope.list = [['a', 'b'], ['c', 'd']];
-  }
-</script>
-<div ng-controller="Ctrl">
-  <div ng-repeat="innerList in list" ng-init="outerIndex = $index">
-    <div ng-repeat="value in innerList" ng-init="innerIndex = $index">
-       <span class="example-init">list[ {{outerIndex}} ][ {{innerIndex}} ] = {{value}};</span>
-    </div>
+    <div id="scrollArea" ng-controller="ScrollCtrl">
+    <a ng-click="gotoBottom()">Go to bottom</a>
+    <a id="bottom"></a> You're at the bottom!
   </div>
-</div>
 </body>
 </html>

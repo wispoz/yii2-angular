@@ -5,15 +5,16 @@
   <title>Example - example-example87-production</title>
   
 
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
   <script src="script.js"></script>
   
 
   
 </head>
-<body ng-app="docsTransclusionDirective">
-    <div ng-controller="Controller">
-    <my-dialog>Check out the contents, {{name}}!</my-dialog>
+<body ng-app="documentExample">
+    <div ng-controller="ExampleController">
+    <p>$document title: <b ng-bind="title"></b></p>
+    <p>window.document title: <b ng-bind="windowTitle"></b></p>
   </div>
 </body>
 </html>

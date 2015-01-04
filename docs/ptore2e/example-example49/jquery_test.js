@@ -1,10 +1,27 @@
-describe("module:ng.directive:script", function() {
+describe("", function() {
+  var rootEl;
   beforeEach(function() {
-    browser.get("./examples/example-example49/index-jquery.html");
+    rootEl = browser.rootEl;
+    browser.get("examples/example-example49/index-jquery.html");
+  });
+  
+  it('should initialize to model', function() {
+    var userType = element(by.binding('userType'));
+    var valid = element(by.binding('myForm.input.$valid'));
+
+    expect(userType.getText()).toContain('guest');
+    expect(valid.getText()).toContain('true');
   });
 
-  it('should load template defined inside script tag', function() {
-    element(by.css('#tpl-link')).click();
-    expect(element(by.css('#tpl-content')).getText()).toMatch(/Content of the template/);
+  it('should be invalid if empty', function() {
+    var userType = element(by.binding('userType'));
+    var valid = element(by.binding('myForm.input.$valid'));
+    var userInput = element(by.model('userType'));
+
+    userInput.clear();
+    userInput.sendKeys('');
+
+    expect(userType.getText()).toEqual('userType =');
+    expect(valid.getText()).toContain('false');
   });
 });

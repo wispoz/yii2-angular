@@ -1,8 +1,14 @@
-  it('should format date', function() {
-    expect(element(by.binding("1288323623006 | date:'medium'")).getText()).
-       toMatch(/Oct 2\d, 2010 \d{1,2}:\d{2}:\d{2} (AM|PM)/);
-    expect(element(by.binding("1288323623006 | date:'yyyy-MM-dd HH:mm:ss Z'")).getText()).
-       toMatch(/2010\-10\-2\d \d{2}:\d{2}:\d{2} (\-|\+)?\d{4}/);
-    expect(element(by.binding("'1288323623006' | date:'MM/dd/yyyy @ h:mma'")).getText()).
-       toMatch(/10\/2\d\/2010 @ \d{1,2}:\d{2}(AM|PM)/);
+  it('should check ng-class', function() {
+    expect(element(by.css('.base-class')).getAttribute('class')).not.
+      toMatch(/my-class/);
+
+    element(by.id('setbtn')).click();
+
+    expect(element(by.css('.base-class')).getAttribute('class')).
+      toMatch(/my-class/);
+
+    element(by.id('clearbtn')).click();
+
+    expect(element(by.css('.base-class')).getAttribute('class')).not.
+      toMatch(/my-class/);
   });

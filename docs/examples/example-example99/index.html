@@ -6,47 +6,20 @@
   
 
   <script src="../../../angular.min.js"></script>
+  <script src="script.js"></script>
   
 
   
 </head>
-<body ng-app="">
-    <div ng-controller="Controller">
-    <form novalidate class="css-form">
-      Name:
-        <input type="text" ng-model="user.name" required /><br />
-      E-mail: <input type="email" ng-model="user.email" required /><br />
-      Gender: <input type="radio" ng-model="user.gender" value="male" />male
-      <input type="radio" ng-model="user.gender" value="female" />female<br />
-      <button ng-click="reset()">RESET</button>
-      <button ng-click="update(user)">SAVE</button>
-    </form>
+<body ng-app="logExample">
+    <div ng-controller="LogController">
+    <p>Reload this page with open console, enter text and hit the log button...</p>
+    Message:
+    <input type="text" ng-model="message"/>
+    <button ng-click="$log.log(message)">log</button>
+    <button ng-click="$log.warn(message)">warn</button>
+    <button ng-click="$log.info(message)">info</button>
+    <button ng-click="$log.error(message)">error</button>
   </div>
-
-  <style type="text/css">
-    .css-form input.ng-invalid.ng-dirty {
-      background-color: #FA787E;
-    }
-
-    .css-form input.ng-valid.ng-dirty {
-      background-color: #78FA89;
-    }
-  </style>
-
-  <script>
-    function Controller($scope) {
-      $scope.master = {};
-
-      $scope.update = function(user) {
-        $scope.master = angular.copy(user);
-      };
-
-      $scope.reset = function() {
-        $scope.user = angular.copy($scope.master);
-      };
-
-      $scope.reset();
-    }
-  </script>
 </body>
 </html>

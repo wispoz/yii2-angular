@@ -1,18 +1,13 @@
-describe("module:ng.directive:ngShow", function() {
+describe("", function() {
+  var rootEl;
   beforeEach(function() {
-    browser.get("./examples/example-example44/index-jquery.html");
+    rootEl = browser.rootEl;
+    browser.get("examples/example-example44/index-jquery.html");
   });
-
-  var thumbsUp = element(by.css('span.glyphicon-thumbs-up'));
-  var thumbsDown = element(by.css('span.glyphicon-thumbs-down'));
-
-  it('should check ng-show / ng-hide', function() {
-    expect(thumbsUp.isDisplayed()).toBeFalsy();
-    expect(thumbsDown.isDisplayed()).toBeTruthy();
-
+  
+  it('should toggle button', function() {
+    expect(element(by.css('button')).getAttribute('disabled')).toBeFalsy();
     element(by.model('checked')).click();
-
-    expect(thumbsUp.isDisplayed()).toBeTruthy();
-    expect(thumbsDown.isDisplayed()).toBeFalsy();
+    expect(element(by.css('button')).getAttribute('disabled')).toBeTruthy();
   });
 });

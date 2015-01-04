@@ -1,28 +1,13 @@
-  it('should check controller', function() {
-    var container = element(by.id('ctrl-exmpl'));
+  it('should calculate expression in binding', function() {
+    if (browser.params.browser == 'safari') {
+      // Safari can't handle dialogs.
+      return;
+    }
+    element(by.css('[ng-click="greet()"]')).click();
 
-    expect(container.findElement(by.model('name'))
-        .getAttribute('value')).toBe('John Smith');
+    var alertDialog = browser.switchTo().alert();
 
-    var firstRepeat =
-        container.findElement(by.repeater('contact in contacts').row(0));
-    var secondRepeat =
-        container.findElement(by.repeater('contact in contacts').row(1));
+    expect(alertDialog.getText()).toEqual('Hello World');
 
-    expect(firstRepeat.findElement(by.model('contact.value')).getAttribute('value'))
-        .toBe('408 555 1212');
-    expect(secondRepeat.findElement(by.model('contact.value')).getAttribute('value'))
-        .toBe('john.smith@example.org');
-
-    firstRepeat.findElement(by.linkText('clear')).click();
-
-    expect(firstRepeat.findElement(by.model('contact.value')).getAttribute('value'))
-        .toBe('');
-
-    container.findElement(by.linkText('add')).click();
-
-    expect(container.findElement(by.repeater('contact in contacts').row(2))
-        .findElement(by.model('contact.value'))
-        .getAttribute('value'))
-        .toBe('yourname@example.org');
+    alertDialog.accept();
   });

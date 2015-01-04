@@ -1,12 +1,38 @@
-describe("expression", function() {
+describe("", function() {
+  var rootEl;
   beforeEach(function() {
-    browser.get("./examples/example-example93/index-jquery.html");
+    rootEl = browser.rootEl;
+    browser.get("examples/example-example93/index-jquery.html");
+  });
+  
+  var numLimitInput = element(by.model('numLimit'));
+  var letterLimitInput = element(by.model('letterLimit'));
+  var limitedNumbers = element(by.binding('numbers | limitTo:numLimit'));
+  var limitedLetters = element(by.binding('letters | limitTo:letterLimit'));
+
+  it('should limit the number array to first three items', function() {
+    expect(numLimitInput.getAttribute('value')).toBe('3');
+    expect(letterLimitInput.getAttribute('value')).toBe('3');
+    expect(limitedNumbers.getText()).toEqual('Output numbers: [1,2,3]');
+    expect(limitedLetters.getText()).toEqual('Output letters: abc');
   });
 
-  it('should allow user expression testing', function() {
-    element(by.css('.expressions button')).click();
-    var lis = element(by.css('.expressions ul')).element.all(by.repeater('expr in exprs'));
-    expect(lis.count()).toBe(1);
-    expect(lis.get(0).getText()).toEqual('[ X ] 3*10|currency => $30.00');
+  // There is a bug in safari and protractor that doesn't like the minus key
+  // it('should update the output when -3 is entered', function() {
+  //   numLimitInput.clear();
+  //   numLimitInput.sendKeys('-3');
+  //   letterLimitInput.clear();
+  //   letterLimitInput.sendKeys('-3');
+  //   expect(limitedNumbers.getText()).toEqual('Output numbers: [7,8,9]');
+  //   expect(limitedLetters.getText()).toEqual('Output letters: ghi');
+  // });
+
+  it('should not exceed the maximum size of input array', function() {
+    numLimitInput.clear();
+    numLimitInput.sendKeys('100');
+    letterLimitInput.clear();
+    letterLimitInput.sendKeys('100');
+    expect(limitedNumbers.getText()).toEqual('Output numbers: [1,2,3,4,5,6,7,8,9]');
+    expect(limitedLetters.getText()).toEqual('Output letters: abcdefghi');
   });
 });

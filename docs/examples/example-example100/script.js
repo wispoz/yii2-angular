@@ -1,17 +1,11 @@
-  function Controller($scope) {
-    $scope.master = {};
+var mySceApp = angular.module('mySceApp', ['ngSanitize']);
 
-    $scope.update = function(user) {
-      $scope.master = angular.copy(user);
-    };
-
-    $scope.reset = function() {
-      $scope.user = angular.copy($scope.master);
-    };
-
-    $scope.isUnchanged = function(user) {
-      return angular.equals(user, $scope.master);
-    };
-
-    $scope.reset();
-  }
+mySceApp.controller("myAppController", function myAppController($http, $templateCache, $sce) {
+  var self = this;
+  $http.get("test_data.json", {cache: $templateCache}).success(function(userComments) {
+    self.userComments = userComments;
+  });
+  self.explicitlyTrustedHtml = $sce.trustAsHtml(
+      '<span onmouseover="this.textContent=&quot;Explicitly trusted HTML bypasses ' +
+      'sanitization.&quot;">Hover over this text.</span>');
+});

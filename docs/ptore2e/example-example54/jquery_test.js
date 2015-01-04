@@ -1,19 +1,36 @@
-describe("module:ng.filter:number", function() {
+describe("", function() {
+  var rootEl;
   beforeEach(function() {
-    browser.get("./examples/example-example54/index-jquery.html");
+    rootEl = browser.rootEl;
+    browser.get("examples/example-example54/index-jquery.html");
+  });
+  
+  var ps = element.all(by.css('p'));
+
+  it('should let you toggle the class', function() {
+
+    expect(ps.first().getAttribute('class')).not.toMatch(/bold/);
+    expect(ps.first().getAttribute('class')).not.toMatch(/red/);
+
+    element(by.model('important')).click();
+    expect(ps.first().getAttribute('class')).toMatch(/bold/);
+
+    element(by.model('error')).click();
+    expect(ps.first().getAttribute('class')).toMatch(/red/);
   });
 
-  it('should format numbers', function() {
-    expect(element(by.id('number-default')).getText()).toBe('1,234.568');
-    expect(element(by.binding('val | number:0')).getText()).toBe('1,235');
-    expect(element(by.binding('-val | number:4')).getText()).toBe('-1,234.5679');
+  it('should let you toggle string example', function() {
+    expect(ps.get(1).getAttribute('class')).toBe('');
+    element(by.model('style')).clear();
+    element(by.model('style')).sendKeys('red');
+    expect(ps.get(1).getAttribute('class')).toBe('red');
   });
 
-  it('should update', function() {
-    element(by.model('val')).clear();
-    element(by.model('val')).sendKeys('3374.333');
-    expect(element(by.id('number-default')).getText()).toBe('3,374.333');
-    expect(element(by.binding('val | number:0')).getText()).toBe('3,374');
-    expect(element(by.binding('-val | number:4')).getText()).toBe('-3,374.3330');
- });
+  it('array example should have 3 classes', function() {
+    expect(ps.last().getAttribute('class')).toBe('');
+    element(by.model('style1')).sendKeys('bold');
+    element(by.model('style2')).sendKeys('strike');
+    element(by.model('style3')).sendKeys('red');
+    expect(ps.last().getAttribute('class')).toBe('bold strike red');
+  });
 });

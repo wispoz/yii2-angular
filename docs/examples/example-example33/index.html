@@ -6,12 +6,18 @@
   
 
   <script src="../../../angular.min.js"></script>
+  <script src="script.js"></script>
   
 
   
 </head>
-<body ng-app="">
-   <input ng-keypress="count = count + 1" ng-init="count=0">
- key press count: {{count}}
+<body ng-app="scopeExample">
+    <div ng-controller="MyController">
+    Your name:
+      <input type="text" ng-model="username">
+      <button ng-click='sayHello()'>greet</button>
+    <hr>
+    {{greeting}}
+  </div>
 </body>
 </html>

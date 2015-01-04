@@ -6,16 +6,21 @@
   
 
   <script src="../../../angular.min.js"></script>
-  <script src="script.js"></script>
   
 
   
 </head>
-<body ng-app="docsIsoFnBindExample">
-    <div ng-controller="Controller">
-    <my-dialog ng-hide="dialogIsHidden" on-close="hideDialog()">
-      Check out the contents, {{name}}!
-    </my-dialog>
+<body ng-app="currencyExample">
+    <script>
+    angular.module('currencyExample', [])
+      .controller('ExampleController', ['$scope', function($scope) {
+        $scope.amount = 1234.56;
+      }]);
+  </script>
+  <div ng-controller="ExampleController">
+    <input type="number" ng-model="amount"> <br>
+    default currency symbol ($): <span id="currency-default">{{amount | currency}}</span><br>
+    custom currency identifier (USD$): <span>{{amount | currency:"USD$"}}</span>
   </div>
 </body>
 </html>

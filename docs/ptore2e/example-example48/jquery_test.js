@@ -1,16 +1,13 @@
-describe("module:ng.directive:ngTransclude", function() {
+describe("", function() {
+  var rootEl;
   beforeEach(function() {
-    browser.get("./examples/example-example48/index-jquery.html");
+    rootEl = browser.rootEl;
+    browser.get("examples/example-example48/index-jquery.html");
   });
-
-   it('should have transcluded', function() {
-     var titleElement = element(by.model('title'));
-     titleElement.clear();
-     titleElement.sendKeys('TITLE');
-     var textElement = element(by.model('text'));
-     textElement.clear();
-     textElement.sendKeys('TEXT');
-     expect(element(by.binding('title')).getText()).toEqual('TITLE');
-     expect(element(by.binding('text')).getText()).toEqual('TEXT');
-   });
+  
+  it('should toggle open', function() {
+    expect(element(by.id('details')).getAttribute('open')).toBeFalsy();
+    element(by.model('open')).click();
+    expect(element(by.id('details')).getAttribute('open')).toBeTruthy();
+  });
 });

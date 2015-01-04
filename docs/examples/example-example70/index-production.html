@@ -5,18 +5,30 @@
   <title>Example - example-example70-production</title>
   
 
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
   
 
   
 </head>
-<body ng-app="">
-    <div ng-show="!showActions" ng-swipe-left="showActions = true">
-    Some list content, like an email in the inbox
-  </div>
-  <div ng-show="showActions" ng-swipe-right="showActions = false">
-    <button ng-click="reply()">Reply</button>
-    <button ng-click="delete()">Delete</button>
-  </div>
+<body ng-app="submitExample">
+   <script>
+   angular.module('submitExample', [])
+     .controller('ExampleController', ['$scope', function($scope) {
+       $scope.list = [];
+       $scope.text = 'hello';
+       $scope.submit = function() {
+         if ($scope.text) {
+           $scope.list.push(this.text);
+           $scope.text = '';
+         }
+       };
+     }]);
+ </script>
+ <form ng-submit="submit()" ng-controller="ExampleController">
+   Enter text and hit enter:
+   <input type="text" ng-model="text" name="text" />
+   <input type="submit" id="submit" value="Submit" />
+   <pre>list={{list}}</pre>
+ </form>
 </body>
 </html>
