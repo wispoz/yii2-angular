@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Example - example-example57-debug</title>
-  <link href="style.css" rel="stylesheet" type="text/css">
   
 
   <script src="../../../angular.js"></script>
@@ -12,12 +11,9 @@
   
 </head>
 <body ng-app="">
-     <ol ng-init="names=['John', 'Mary', 'Cate', 'Suz']">
-     <li ng-repeat="name in names">
-      <span ng-class-odd="'odd'" ng-class-even="'even'">
-        {{name}} &nbsp; &nbsp; &nbsp;
-      </span>
-     </li>
-   </ol>
+  Check me check multiple: <input type="checkbox" ng-model="open"><br/>
+<details id="details" ng-open="open">
+   <summary>Show/Hide me</summary>
+</details>
 </body>
 </html>

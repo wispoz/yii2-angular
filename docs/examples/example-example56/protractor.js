@@ -1,6 +1,5 @@
-  it('should check ng-class-odd and ng-class-even', function() {
-    expect(element(by.repeater('name in names').row(0).column('name')).getAttribute('class')).
-      toMatch(/odd/);
-    expect(element(by.repeater('name in names').row(1).column('name')).getAttribute('class')).
-      toMatch(/even/);
-  });
+it('should select Greetings!', function() {
+  expect(element(by.id('greet')).getAttribute('selected')).toBeFalsy();
+  element(by.model('selected')).click();
+  expect(element(by.id('greet')).getAttribute('selected')).toBeTruthy();
+});

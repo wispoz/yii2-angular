@@ -1,8 +1,21 @@
-  angular.module('scopeExample', [])
-    .controller('MyController', ['$scope', function($scope) {
-      $scope.username = 'World';
+(function(angular) {
+  'use strict';
+angular.module('formExample', [])
+  .controller('ExampleController', ['$scope', function($scope) {
+    $scope.master = {};
 
-      $scope.sayHello = function() {
-        $scope.greeting = 'Hello ' + $scope.username + '!';
-      };
-    }]);
+    $scope.update = function(user) {
+      $scope.master = angular.copy(user);
+    };
+
+    $scope.reset = function(form) {
+      if (form) {
+        form.$setPristine();
+        form.$setUntouched();
+      }
+      $scope.user = angular.copy($scope.master);
+    };
+
+    $scope.reset();
+  }]);
+})(window.angular);

@@ -2,12 +2,11 @@ describe("", function() {
   var rootEl;
   beforeEach(function() {
     rootEl = browser.rootEl;
-    browser.get("examples/example-example101/index-jquery.html");
+    browser.get("build/docs/examples/example-example101/index-jquery.html");
   });
   
- it('should display the greeting in the input box', function() {
-  element(by.model('greeting')).sendKeys('Hello, E2E Tests');
-  // If we click the button it will block the test runner
-  // element(':button').click();
- });
+it('should jsonify filtered objects', function() {
+  expect(element(by.id('default-spacing')).getText()).toMatch(/\{\n  "name": ?"value"\n}/);
+  expect(element(by.id('custom-spacing')).getText()).toMatch(/\{\n    "name": ?"value"\n}/);
+});
 });

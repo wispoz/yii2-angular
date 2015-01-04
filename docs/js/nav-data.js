@@ -126,6 +126,11 @@ angular.module('navData', [])
             "type": "function"
           },
           {
+            "name": "angular.reloadWithDebugInfo",
+            "href": "api/ng/function/angular.reloadWithDebugInfo",
+            "type": "function"
+          },
+          {
             "name": "angular.toJson",
             "href": "api/ng/function/angular.toJson",
             "type": "function"
@@ -161,8 +166,23 @@ angular.module('navData', [])
             "type": "input"
           },
           {
+            "name": "input[date]",
+            "href": "api/ng/input/input[date]",
+            "type": "input"
+          },
+          {
+            "name": "input[datetime-local]",
+            "href": "api/ng/input/input[datetime-local]",
+            "type": "input"
+          },
+          {
             "name": "input[email]",
             "href": "api/ng/input/input[email]",
+            "type": "input"
+          },
+          {
+            "name": "input[month]",
+            "href": "api/ng/input/input[month]",
             "type": "input"
           },
           {
@@ -181,8 +201,18 @@ angular.module('navData', [])
             "type": "input"
           },
           {
+            "name": "input[time]",
+            "href": "api/ng/input/input[time]",
+            "type": "input"
+          },
+          {
             "name": "input[url]",
             "href": "api/ng/input/input[url]",
+            "type": "input"
+          },
+          {
+            "name": "input[week]",
+            "href": "api/ng/input/input[week]",
             "type": "input"
           },
           {
@@ -333,6 +363,11 @@ angular.module('navData', [])
           {
             "name": "ngModel",
             "href": "api/ng/directive/ngModel",
+            "type": "directive"
+          },
+          {
+            "name": "ngModelOptions",
+            "href": "api/ng/directive/ngModelOptions",
             "type": "directive"
           },
           {
@@ -501,6 +536,76 @@ angular.module('navData', [])
             "type": "type"
           },
           {
+            "name": "provider",
+            "type": "section",
+            "href": "api/ng/provider"
+          },
+          {
+            "name": "$anchorScrollProvider",
+            "href": "api/ng/provider/$anchorScrollProvider",
+            "type": "provider"
+          },
+          {
+            "name": "$animateProvider",
+            "href": "api/ng/provider/$animateProvider",
+            "type": "provider"
+          },
+          {
+            "name": "$compileProvider",
+            "href": "api/ng/provider/$compileProvider",
+            "type": "provider"
+          },
+          {
+            "name": "$controllerProvider",
+            "href": "api/ng/provider/$controllerProvider",
+            "type": "provider"
+          },
+          {
+            "name": "$filterProvider",
+            "href": "api/ng/provider/$filterProvider",
+            "type": "provider"
+          },
+          {
+            "name": "$httpProvider",
+            "href": "api/ng/provider/$httpProvider",
+            "type": "provider"
+          },
+          {
+            "name": "$interpolateProvider",
+            "href": "api/ng/provider/$interpolateProvider",
+            "type": "provider"
+          },
+          {
+            "name": "$locationProvider",
+            "href": "api/ng/provider/$locationProvider",
+            "type": "provider"
+          },
+          {
+            "name": "$logProvider",
+            "href": "api/ng/provider/$logProvider",
+            "type": "provider"
+          },
+          {
+            "name": "$parseProvider",
+            "href": "api/ng/provider/$parseProvider",
+            "type": "provider"
+          },
+          {
+            "name": "$rootScopeProvider",
+            "href": "api/ng/provider/$rootScopeProvider",
+            "type": "provider"
+          },
+          {
+            "name": "$sceDelegateProvider",
+            "href": "api/ng/provider/$sceDelegateProvider",
+            "type": "provider"
+          },
+          {
+            "name": "$sceProvider",
+            "href": "api/ng/provider/$sceProvider",
+            "type": "provider"
+          },
+          {
             "name": "service",
             "type": "section",
             "href": "api/ng/service"
@@ -616,6 +721,11 @@ angular.module('navData', [])
             "type": "service"
           },
           {
+            "name": "$templateRequest",
+            "href": "api/ng/service/$templateRequest",
+            "type": "service"
+          },
+          {
             "name": "$timeout",
             "href": "api/ng/service/$timeout",
             "type": "service"
@@ -624,71 +734,6 @@ angular.module('navData', [])
             "name": "$window",
             "href": "api/ng/service/$window",
             "type": "service"
-          },
-          {
-            "name": "provider",
-            "type": "section",
-            "href": "api/ng/provider"
-          },
-          {
-            "name": "$animateProvider",
-            "href": "api/ng/provider/$animateProvider",
-            "type": "provider"
-          },
-          {
-            "name": "$compileProvider",
-            "href": "api/ng/provider/$compileProvider",
-            "type": "provider"
-          },
-          {
-            "name": "$controllerProvider",
-            "href": "api/ng/provider/$controllerProvider",
-            "type": "provider"
-          },
-          {
-            "name": "$filterProvider",
-            "href": "api/ng/provider/$filterProvider",
-            "type": "provider"
-          },
-          {
-            "name": "$httpProvider",
-            "href": "api/ng/provider/$httpProvider",
-            "type": "provider"
-          },
-          {
-            "name": "$interpolateProvider",
-            "href": "api/ng/provider/$interpolateProvider",
-            "type": "provider"
-          },
-          {
-            "name": "$locationProvider",
-            "href": "api/ng/provider/$locationProvider",
-            "type": "provider"
-          },
-          {
-            "name": "$logProvider",
-            "href": "api/ng/provider/$logProvider",
-            "type": "provider"
-          },
-          {
-            "name": "$parseProvider",
-            "href": "api/ng/provider/$parseProvider",
-            "type": "provider"
-          },
-          {
-            "name": "$rootScopeProvider",
-            "href": "api/ng/provider/$rootScopeProvider",
-            "type": "provider"
-          },
-          {
-            "name": "$sceDelegateProvider",
-            "href": "api/ng/provider/$sceDelegateProvider",
-            "type": "provider"
-          },
-          {
-            "name": "$sceProvider",
-            "href": "api/ng/provider/$sceProvider",
-            "type": "provider"
           },
           {
             "name": "filter",
@@ -792,6 +837,33 @@ angular.module('navData', [])
         ]
       },
       {
+        "name": "ngAria",
+        "href": "api/ngAria",
+        "type": "group",
+        "navItems": [
+          {
+            "name": "provider",
+            "type": "section",
+            "href": "api/ngAria/provider"
+          },
+          {
+            "name": "$ariaProvider",
+            "href": "api/ngAria/provider/$ariaProvider",
+            "type": "provider"
+          },
+          {
+            "name": "service",
+            "type": "section",
+            "href": "api/ngAria/service"
+          },
+          {
+            "name": "$aria",
+            "href": "api/ngAria/service/$aria",
+            "type": "service"
+          }
+        ]
+      },
+      {
         "name": "ngCookies",
         "href": "api/ngCookies",
         "type": "group",
@@ -810,6 +882,28 @@ angular.module('navData', [])
             "name": "$cookies",
             "href": "api/ngCookies/service/$cookies",
             "type": "service"
+          }
+        ]
+      },
+      {
+        "name": "ngMessages",
+        "href": "api/ngMessages",
+        "type": "group",
+        "navItems": [
+          {
+            "name": "directive",
+            "type": "section",
+            "href": "api/ngMessages/directive"
+          },
+          {
+            "name": "ngMessage",
+            "href": "api/ngMessages/directive/ngMessage",
+            "type": "directive"
+          },
+          {
+            "name": "ngMessages",
+            "href": "api/ngMessages/directive/ngMessages",
+            "type": "directive"
           }
         ]
       },
@@ -872,6 +966,11 @@ angular.module('navData', [])
             "name": "type",
             "type": "section",
             "href": "api/ngMock/type"
+          },
+          {
+            "name": "$rootScope.Scope",
+            "href": "api/ngMock/type/$rootScope.Scope",
+            "type": "type"
           },
           {
             "name": "angular.mock.TzDate",
@@ -1132,13 +1231,13 @@ angular.module('navData', [])
             "type": "error"
           },
           {
-            "name": "$httpBackend",
-            "href": "error/$httpBackend",
+            "name": "$http",
+            "href": "error/$http",
             "type": "section"
           },
           {
-            "name": "noxhr",
-            "href": "error/$httpBackend/noxhr",
+            "name": "badreq",
+            "href": "error/$http/badreq",
             "type": "error"
           },
           {
@@ -1172,6 +1271,16 @@ angular.module('navData', [])
             "type": "error"
           },
           {
+            "name": "strictdi",
+            "href": "error/$injector/strictdi",
+            "type": "error"
+          },
+          {
+            "name": "undef",
+            "href": "error/$injector/undef",
+            "type": "error"
+          },
+          {
             "name": "unpr",
             "href": "error/$injector/unpr",
             "type": "error"
@@ -1197,11 +1306,6 @@ angular.module('navData', [])
             "type": "section"
           },
           {
-            "name": "ihshprfx",
-            "href": "error/$location/ihshprfx",
-            "type": "error"
-          },
-          {
             "name": "ipthprfx",
             "href": "error/$location/ipthprfx",
             "type": "error"
@@ -1209,6 +1313,16 @@ angular.module('navData', [])
           {
             "name": "isrcharg",
             "href": "error/$location/isrcharg",
+            "type": "error"
+          },
+          {
+            "name": "nobase",
+            "href": "error/$location/nobase",
+            "type": "error"
+          },
+          {
+            "name": "nostate",
+            "href": "error/$location/nostate",
             "type": "error"
           },
           {
@@ -1259,6 +1373,21 @@ angular.module('navData', [])
           {
             "name": "ueoe",
             "href": "error/$parse/ueoe",
+            "type": "error"
+          },
+          {
+            "name": "$q",
+            "href": "error/$q",
+            "type": "section"
+          },
+          {
+            "name": "norslvr",
+            "href": "error/$q/norslvr",
+            "type": "error"
+          },
+          {
+            "name": "qcycle",
+            "href": "error/$q/qcycle",
             "type": "error"
           },
           {
@@ -1402,9 +1531,24 @@ angular.module('navData', [])
             "type": "error"
           },
           {
+            "name": "test",
+            "href": "error/ng/test",
+            "type": "error"
+          },
+          {
             "name": "ngModel",
             "href": "error/ngModel",
             "type": "section"
+          },
+          {
+            "name": "constexpr",
+            "href": "error/ngModel/constexpr",
+            "type": "error"
+          },
+          {
+            "name": "datefmt",
+            "href": "error/ngModel/datefmt",
+            "type": "error"
           },
           {
             "name": "nonassign",
@@ -1422,6 +1566,11 @@ angular.module('navData', [])
             "type": "error"
           },
           {
+            "name": "trkslct",
+            "href": "error/ngOptions/trkslct",
+            "type": "error"
+          },
+          {
             "name": "ngPattern",
             "href": "error/ngPattern",
             "type": "section"
@@ -1435,6 +1584,11 @@ angular.module('navData', [])
             "name": "ngRepeat",
             "href": "error/ngRepeat",
             "type": "section"
+          },
+          {
+            "name": "badident",
+            "href": "error/ngRepeat/badident",
+            "type": "error"
           },
           {
             "name": "dupes",
@@ -1590,12 +1744,22 @@ angular.module('navData', [])
             "type": "page"
           },
           {
+            "name": "Accessibility",
+            "href": "guide/accessibility",
+            "type": "page"
+          },
+          {
             "name": "Internet Explorer Compatibility",
             "href": "guide/ie",
             "type": "page"
           },
           {
-            "name": "Migrating from 1.0 to 1.2",
+            "name": "Running in Production",
+            "href": "guide/production",
+            "type": "page"
+          },
+          {
+            "name": "Migrating from Previous Versions",
             "href": "guide/migration",
             "type": "page"
           }

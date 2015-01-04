@@ -1,29 +1,29 @@
 // Meta data used by the AngularJS docs app
 angular.module('versionsData', [])
   .value('NG_VERSION', {
-  "raw": "v1.2.28",
+  "raw": "v1.3.8",
   "major": 1,
-  "minor": 2,
-  "patch": 28,
+  "minor": 3,
+  "patch": 8,
   "prerelease": [],
   "build": [],
-  "version": "1.2.28",
-  "codeName": "finnish-disembarkation",
-  "full": "1.2.28",
-  "branch": "v1.2.x"
+  "version": "1.3.8",
+  "codeName": "prophetic-narwhal",
+  "full": "1.3.8",
+  "branch": "v1.3.x"
 })
   .value('NG_VERSIONS', [
   {
-    "raw": "v1.2.28",
+    "raw": "v1.3.8",
     "major": 1,
-    "minor": 2,
-    "patch": 28,
+    "minor": 3,
+    "patch": 8,
     "prerelease": [],
     "build": [],
-    "version": "1.2.28",
-    "codeName": "finnish-disembarkation",
-    "full": "1.2.28",
-    "branch": "v1.2.x"
+    "version": "1.3.8",
+    "codeName": "prophetic-narwhal",
+    "full": "1.3.8",
+    "branch": "v1.3.x"
   },
   {
     "raw": "v1.3.7",
@@ -429,6 +429,16 @@ angular.module('versionsData', [])
     "build": [],
     "version": "1.3.0-beta.1",
     "docsUrl": "http://code.angularjs.org/1.3.0-beta.1/docs"
+  },
+  {
+    "raw": "v1.2.28",
+    "major": 1,
+    "minor": 2,
+    "patch": 28,
+    "prerelease": [],
+    "build": [],
+    "version": "1.2.28",
+    "docsUrl": "http://code.angularjs.org/1.2.28/docs"
   },
   {
     "raw": "v1.2.27",
