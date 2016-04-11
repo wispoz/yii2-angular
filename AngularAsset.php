@@ -5,7 +5,7 @@
  * @license BSD-3-Clause
  */
 
-namespace yii\angularjs;
+namespace wispoz\angularjs;
 
 use yii\web\AssetBundle;
 
@@ -13,20 +13,12 @@ use yii\web\AssetBundle;
  * This asset bundle provides the [angular javascript library](https://angularjs.org/)
  *
  * @author Vladislav Orlov <orlov@tesjin.ru>
+ * @author wispoz <wispoz@inbox.ru>
  */
 class AngularAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/tesjin/yii2-angularjs';
+    public $sourcePath = 'bower-asset/angular';
     public $js = [
-        'js/angular.js',
-        'js/angular-animate.js',
-        'js/angular-cookies.js',
-        'js/angular-loader.js',
-        'js/angular-mocks.js',
-        'js/angular-resource.js',
-        'js/angular-route.js',
-        'js/angular-sanitize.js',
-        'js/angular-scenario.js',
-        'js/angular-touch.js',
+        'angular.js',
     ];
 }
