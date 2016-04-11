@@ -19,9 +19,9 @@
     }
   ],
   "support": {
-    "email": "wispoz@inbox.ru",
-    "issues": "https://github.com/wispoz/yii2-angularjs/issues",
-    "source": "https://github.com/wispoz/yii2-angularjs"
+    "email": "support@tesjin.ru",
+    "issues": "https://github.com/tesjin/yii2-angularjs/issues",
+    "source": "https://github.com/tesjin/yii2-angularjs"
   },
   "require": {
     "php": ">=5.3.0"
